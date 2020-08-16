@@ -63,7 +63,7 @@ const BlockchainSearchField: FunctionComponent<ReduxStateProps & RouteComponentP
 		<>
 			<TextField
 				className={classes.searchBar}
-				id="outlined-basic" 
+				id="blockchain-search-field"
 				label={`Search ${props.selectedBlockchain.name} Blockchain`}
 				variant="outlined"
 				InputProps={{
@@ -79,7 +79,7 @@ const BlockchainSearchField: FunctionComponent<ReduxStateProps & RouteComponentP
 				value={currentValue}
 				helperText={isError ? `Please enter a valid ${props.selectedBlockchain.name} Block Hash or ID` : ""}
 			/>
-			<Button onClick={() => handleValidateAndRedirect()} variant="contained" color="primary" className={classes.searchButton}>Search</Button>
+			<Button id="blockchain-search-button" onClick={() => handleValidateAndRedirect()} variant="contained" color="primary" className={classes.searchButton}>Search</Button>
 		</>
 	);
 }

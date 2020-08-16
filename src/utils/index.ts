@@ -18,12 +18,12 @@ interface INumberFormatParams {
 }
 
 export const numberFormat = (params: INumberFormatParams) => {
-    let { value, decimals = 0, label = false, prefix = true } = params;
+    const { value, decimals = 0, label = false, prefix = true } = params;
     let decimalString = '';
     for(let i = 0; i < decimals; i++){
         decimalString += '0';
     }
-    let format = '0,0.' + decimalString;
+    const format = '0,0.' + decimalString;
     if (prefix && label) {
         return label + numeral(value).format(format);
     } else if(label) {
@@ -34,15 +34,15 @@ export const numberFormat = (params: INumberFormatParams) => {
 }
 
 export const priceFormat = (params: INumberFormatParams) => {
-    let { value, decimals = 2, label = false, prefix = true } = params;
+    const { value, decimals = 2, label = false, prefix = true } = params;
     return numberFormat({ value, decimals, label, prefix });
 }
 
 export const centerShortenLongString = (string: string, maxLength: number) => {
 	if(typeof string === 'string') {
 		if(string.length > maxLength) {
-			let charCountForRemoval = string.length - maxLength;
-			let stringHalfwayPoint = Math.floor(maxLength/2);
+			const charCountForRemoval = string.length - maxLength;
+			const stringHalfwayPoint = Math.floor(maxLength/2);
 			string = string.slice(0, stringHalfwayPoint) + "..." + string.slice(stringHalfwayPoint + charCountForRemoval, string.length);
 			return string;
 		}else{

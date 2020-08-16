@@ -74,8 +74,8 @@ const BlockPage: FunctionComponent<IBlockPage & IBlockchainSelectionReduxProps> 
                         } else if(selectedBlockchain.id === 'bitcoin-cash') {
                             useBlockInfoProps = bitcoinCashBlockInfoProps;
                         }
-                        let blockMetaData = [];
-                        for (let [key, item] of Object.entries(useBlockInfoProps)) {
+                        const blockMetaData = [];
+                        for (const [key, item] of Object.entries(useBlockInfoProps)) {
                             if(responseData.data[blockId]){
                                 if(blockMetaData.length === 1) {
                                     // Add confirmation record as second record

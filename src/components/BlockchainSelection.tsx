@@ -52,7 +52,7 @@ const BlockchainSelection: FunctionComponent<IBlockchainSelection & IBlockchainS
             fetch(requestUrl)
                 .then(response => response.json())
                 .then(data => {
-                    for (let cryptoStats of data) {
+                    for (const cryptoStats of data) {
                         usePriceData[cryptoStats.id] = cryptoStats.current_price;
                     }
                     if(isMounted){

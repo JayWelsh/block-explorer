@@ -48,13 +48,13 @@ const BlockTransactionsTable: FunctionComponent<IBlockInfoTable> = ({blockTransa
         let isMounted = true;
         const fetchBlockTransactionData = async () => {
             if(typeof blockHeight === 'number') {
-                let blockTransactionData: ITableData[] = [];
+                const blockTransactionData: ITableData[] = [];
                 const requestUrl = `https://api.blockchair.com/${selectedBlockchainId}/transactions?q=block_id(${blockHeight})&limit=${rowsPerPage}&offset=${rowsPerPage * page}`;
                 fetch(requestUrl)
                     .then(response => response.json())
                     .then(responseData => {
-                        for(let transaction of responseData.data) {
-                            let parsedTransactionData: ITableData = {};
+                        for(const transaction of responseData.data) {
+                            const parsedTransactionData: ITableData = {};
                             let useBlockInfoProps = bitcoinTransactionTopLevel;
                             if(selectedBlockchainId === 'ethereum') {
                                 useBlockInfoProps = ethereumTransactionTopLevel;
@@ -114,7 +114,7 @@ const BlockTransactionsTable: FunctionComponent<IBlockInfoTable> = ({blockTransa
                     </TableHead>
                     <TableBody>
                     {
-                        useBlockTransactionData.map((row, index) => {
+                        useBlockTransactionData && useBlockTransactionData.map((row, index) => {
                             const labelId = `blockchain-transaction-table-row-${index}`;
                             return (
                                 <TableRow

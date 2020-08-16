@@ -32,8 +32,8 @@ const BlockInfoTable: FunctionComponent<IBlockInfoTable> = ({blockMetaData}) => 
     return (
         <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
-                <TableBody>
-                {useBlockMetaData.map((row) => {
+                <TableBody id="block-info-table">
+                {useBlockMetaData && useBlockMetaData.map((row) => {
                     let useValue = (row.value || row.value === 0) ? row.value : <i>Pending</i>;
                     if(row.formattedValue) {
                         useValue = row.formattedValue;

@@ -11,8 +11,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
-import BlockIcon from '@material-ui/icons/CropSquare';
-import BlockIcon2 from '@material-ui/icons/CenterFocusStrong';
 import { Link as RouterLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 
@@ -21,16 +19,6 @@ const navigationMenu = [
 		text: 'Home',
 		path: '/',
 		icon: <HomeIcon />
-	},
-	{
-		text: 'Block',
-		path: '/block',
-		icon: <BlockIcon />
-	},
-	{
-		text: 'Block Hash',
-		path: '/block/00000000000000000005ca55a40c80213c61e5dfc6a5c2d6d38263303ead1468',
-		icon: <BlockIcon2 />
 	}
 ];
 

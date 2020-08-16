@@ -222,6 +222,7 @@ const BlockchainLatestBlocks: FunctionComponent<IBlockchainLatestBlocks & ReduxS
                             aria-labelledby="tableTitle"
                             size={'medium'}
                             aria-label="enhanced table"
+                            id={`latest-${selectedBlockchain.id}-block-table`}
                         >
                             {latestBlockData && latestBlockData.length > 0 &&
                                 <EnhancedTableHead
@@ -232,7 +233,7 @@ const BlockchainLatestBlocks: FunctionComponent<IBlockchainLatestBlocks & ReduxS
                                 />
                             }
                             <TableBody>
-                            {stableSort(latestBlockData, getComparator(order, orderBy))
+                            {latestBlockData && stableSort(latestBlockData, getComparator(order, orderBy))
                                 .map((row, index) => {
                                     const labelId = `blockchain-latest-blocks-table-row-${index}`;
                                     const timeSinceMined = moment.utc(row.time).fromNow();
