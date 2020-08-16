@@ -1,0 +1,27 @@
+main {
+    overflow-x: auto;
+}
+
+.no-decorate {
+    text-decoration: none;
+}
+
+.link-text-subtle {
+    transition: all 250ms ease 0s;
+    color: #4f5a68;
+}
+
+.link-text-subtle:hover {
+    color: #6181eb;
+}
+
+.clipboard-copy {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+.clipboard-copy:active {
+    opacity: 0.5
+}
